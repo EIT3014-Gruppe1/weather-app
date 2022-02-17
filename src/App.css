@@ -1,12 +1,6 @@
-div > h1 {
-  position: fixed;
-  margin-top: 0px;
-  margin-left: 300px;
-  font-size: 10rem;
-}
-
 .center {
   position: fixed;
+  width: 25%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
