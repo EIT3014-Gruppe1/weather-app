@@ -14,7 +14,6 @@ const BodyPart = ({ clothingImages }) => {
   return (
     <img
       onClick={increaseIndex}
-      className="img-fluid"
       src={`/assets/clothing/${clothingImages[index]}`}
       alt="raincoat girl"
     />

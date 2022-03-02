@@ -1,8 +1,7 @@
 // Component for displaying etymology
 export const EtymologyDisplay = ({ clothing }) => {
  return (
-  <div className="card">
-   <div className="card-body">
+  <div >
     {/* <h2>{title.charAt(0).toUpperCase() + title.slice(1)}</h2> */}
     <br />
     {Object.entries(clothing).map(([key, value]) => {
@@ -49,6 +48,5 @@ export const EtymologyDisplay = ({ clothing }) => {
     en fart på omtrent 2 m/s, mens dråper på 5 mm har en fart på rundt 9 m/s.
     <br /> */}
    </div>
-  </div>
  );
 };
