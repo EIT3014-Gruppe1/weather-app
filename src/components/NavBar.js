@@ -38,7 +38,7 @@ export const NavBar = ({
          maxHeight: "100%",
          height: "60px",
         }}
-        src={`/assets/png/${imageName}.png`}
+        src={`/assets/weather_icons/${imageName}.png`}
         alt="icon"
        />
       </>
