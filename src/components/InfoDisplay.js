@@ -15,14 +15,18 @@ const getClothClosestToCurrentTemp = (clothingArray, currentTemperature) => {
 const getIdealClothing = (data) => {
   let currentTemperature = data.now.temperature;
   let isRaining = data.next_1_hour.probability_of_precipitation > 70;
+  let potentialHat = clothes.headwear;
   let potentialJacket = clothes.upper_body.outerwear;
   let potentialShirt = clothes.upper_body.innerwear;
   let potentialPants = clothes.lower_body.pants;
-  
+  let potentialShoes = clothes.footwear;
+
   let idealClothing = {
+    headwear: [],
     outerwear: [],
     innerwear: [],
     pants: [],
+    footwear: [],
   };
   
   // If it is raining filter out all non-rain proof clothes
@@ -37,6 +41,8 @@ const getIdealClothing = (data) => {
   idealClothing.outerwear = getClothClosestToCurrentTemp(potentialJacket, currentTemperature)
   idealClothing.innerwear = getClothClosestToCurrentTemp(potentialShirt, currentTemperature)
   idealClothing.pants = getClothClosestToCurrentTemp(potentialPants, currentTemperature)
+  idealClothing.footwear = getClothClosestToCurrentTemp(potentialShoes, currentTemperature)
+  idealClothing.headwear = getClothClosestToCurrentTemp(potentialHat, currentTemperature)
 
   return idealClothing;
 };
@@ -49,7 +55,7 @@ export const InfoDisplay = ({ data }) => {
         <EtymologyDisplay clothing={idealClothing} />
       </div>
       <div className="character-container">
-        <CharacterDisplay upperbody={[ idealClothing.outerwear, idealClothing.innerwear]} lowerbody={[idealClothing.pants]} />
+        <CharacterDisplay upperbody={[ idealClothing.outerwear, idealClothing.innerwear]} lowerbody={[idealClothing.pants]} footwear={[idealClothing.footwear]} headwear={[idealClothing.headwear]}/>
       </div>
     </div>
   );

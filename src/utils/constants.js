@@ -29,6 +29,16 @@ export const cities = [
 
 // List of clothes
 export const clothes = {
+  headwear:[
+    {
+      name: "lue",
+      temperature: 5,
+      rain_proof: false,
+      image: "head_wear/lue.png",
+      about:
+       "A nice lue",
+     },
+    ],
  upper_body: {
   innerwear: [
    {
@@ -41,7 +51,7 @@ export const clothes = {
    },
    {
     name: "skjorte",
-    temperature: 10,
+    temperature: 25,
     rain_proof: false,
     image: "upper_body/skjorte.png",
     about:
@@ -92,15 +102,13 @@ export const clothes = {
    },
   ],
  },
- feet: {
-  shoes: [
+ footwear:  [
    {
-    name: "shoes",
+    name: "vintersko",
     temperature: 0,
     rain_proof: true,
-    image: "feet/vintersko.png",
+    image: "footwear/vintersko.png",
     about: "Just some shoes",
    },
   ],
- },
 };

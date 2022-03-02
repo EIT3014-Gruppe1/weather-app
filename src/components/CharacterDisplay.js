@@ -2,15 +2,17 @@ import "../styles/character.css";
 import BodyPart from "./BodyPart";
 
 // Component for displaying character with clothes
-export const CharacterDisplay = ({ upperbody, lowerbody }) => {
+export const CharacterDisplay = ({ upperbody, lowerbody, headwear, footwear }) => {
+  const headwearImages = headwear.map(clothing => clothing.image)
   const upperbodyImages = upperbody.map(clothing => clothing.image)
   const lowerbodyImages = lowerbody.map(clothing => clothing.image)
+  const footwearImages = footwear.map(clothing => clothing.image)
 
   return (
     <div className="character">
       <div className="head-wear">
         <BodyPart
-          clothingImages={["head_wear/lue.png"]}
+          clothingImages={headwearImages}
         />
       </div>
       <div className="head">
@@ -23,7 +25,7 @@ export const CharacterDisplay = ({ upperbody, lowerbody }) => {
         <BodyPart clothingImages={lowerbodyImages} />
       </div>
       <div className="feet">
-        <BodyPart clothingImages={["feet/sneakers.png", "feet/vintersko.png"]} />
+        <BodyPart clothingImages={footwearImages} />
       </div>
     </div>
   );
