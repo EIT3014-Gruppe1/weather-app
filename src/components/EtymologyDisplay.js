@@ -6,7 +6,6 @@ export const EtymologyDisplay = ({ clothing }) => {
     {/* <h2>{title.charAt(0).toUpperCase() + title.slice(1)}</h2> */}
     <br />
     {Object.entries(clothing).map(([key, value]) => {
-     console.log(value.name, value.about);
      return (
       <>
        <h2>{value.name.charAt(0).toUpperCase() + value.name.slice(1)}</h2>
