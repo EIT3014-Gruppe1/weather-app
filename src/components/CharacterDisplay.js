@@ -1,12 +1,30 @@
+import "../styles/character.css";
+import BodyPart from "./BodyPart";
+
 // Component for displaying character with clothes
-export const CharacterDisplay = ({ clothing }) => {
- return (
-  <div className="card-body">
-   <img
-    className="img-fluid"
-    src="https://i.pinimg.com/originals/7c/ce/0c/7cce0c84a4a813fd366afcede9fa80c2.jpg"
-    alt="raincoat girl"
-   />
-  </div>
- );
+export const CharacterDisplay = ({ upperbody, lowerbody }) => {
+  const upperbodyImages = upperbody.map(clothing => clothing.image)
+  const lowerbodyImages = lowerbody.map(clothing => clothing.image)
+
+  return (
+    <div className="character">
+      <div className="head-wear">
+        <BodyPart
+          clothingImages={["head_wear/lue.png"]}
+        />
+      </div>
+      <div className="head">
+        <BodyPart clothingImages={["head.png"]} />
+      </div>
+      <div className="upper-body">
+        <BodyPart clothingImages={upperbodyImages} />
+      </div>
+      <div className="lower-body">
+        <BodyPart clothingImages={lowerbodyImages} />
+      </div>
+      <div className="feet">
+        <BodyPart clothingImages={["feet/sneakers.png", "feet/vintersko.png"]} />
+      </div>
+    </div>
+  );
 };

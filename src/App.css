@@ -5,3 +5,23 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.main-container {
+  height: 100%;
+  width: 100%;
+  padding: 0px 150px 0px 150px;
+  display: flex;
+}
+
+.etymology-container {
+  width: 50%;
+  height: 50%;
+  align-self: center;
+  display: flex;
+}
+
+.character-container {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
