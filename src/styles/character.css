@@ -1,15 +1,7 @@
-:root {
-  --head-size: 90px; /*use to make character proportional*/
-}
 
-.character * img {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-}
 
 .character {
-  height: calc(var(--head-size) * 7.5); /*calculate to make character proportional*/
+  height: 900px;
   width: 700px;
   padding: 0;
   margin: 0;
@@ -17,41 +9,4 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.head-wear {
-  height: calc(var(--head-size) * 0.5); /*calculate to make character proportional*/
-  width: calc(var(--head-size) * 1); /*calculate to make character proportional*/
-  position: relative;
-  top: 20px;
-  z-index: 5;
-}
-.head {
-  height: calc(var(--head-size) * 1); /*calculate to make character proportional*/
-  width: calc(var(--head-size) * 1); /*calculate to make character proportional*/
-  position: relative;
-  z-index: 4;
-}
-.upper-body {
-  height: calc(var(--head-size) * 3); /*calculate to make character proportional*/
-  width: calc(var(--head-size) * 2.33); /*calculate to make character proportional*/
-  position: relative;
-  top: -15px;
-  z-index: 3;
-}
-
-.lower-body {
-  height: calc(var(--head-size) * 3); /*calculate to make character proportional*/
-  width: calc(var(--head-size) * 2.33); /*calculate to make character proportional*/
-  position: relative;
-  top: -40px;
-  z-index: 2;
-}
-
-.feet {
-  height: calc(var(--head-size) * 0.5); /*calculate to make character proportional*/
-  width: calc(var(--head-size) * 2.33); /*calculate to make character proportional*/
-  position: relative;
-  top: -55px;
-  z-index: 1;
 }
