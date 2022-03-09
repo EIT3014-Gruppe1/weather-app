@@ -46,7 +46,197 @@ export const weather = {
           img: "/logo512.png", // Path to imag
         },
       ],
-      etymology: "weather", // Etymology about the weather
+      etymology: "sunny -10", // Etymology about the weather
+    }, // The temperature limit
+    "0": {
+      // Array of clothing layers
+      clothingLayers: [
+        {
+          name: "Test", // Name of clothing
+          etymology: "clothing", // Etymology about clothing
+          img: "/logo192.png", // Path to imag
+        },
+        {
+          name: "Test2", // Name of clothing
+          etymology: "clothing2", // Etymology about clothing
+          img: "/logo512.png", // Path to imag
+        },
+      ],
+      etymology: "sunny 0", // Etymology about the weather
+    },
+    // The temperature limit
+    "10": {
+      // Array of clothing layers
+      clothingLayers: [
+        {
+          name: "Test", // Name of clothing
+          etymology: "clothing", // Etymology about clothing
+          img: "/logo192.png", // Path to imag
+        },
+        {
+          name: "Test2", // Name of clothing
+          etymology: "clothing2", // Etymology about clothing
+          img: "/logo512.png", // Path to imag
+        },
+      ],
+      etymology: "sunny 10", // Etymology about the weather
+    },
+    // The temperature limit
+    "20": {
+      // Array of clothing layers
+      clothingLayers: [
+        {
+          name: "Test", // Name of clothing
+          etymology: "clothing", // Etymology about clothing
+          img: "/logo192.png", // Path to imag
+        },
+        {
+          name: "Test2", // Name of clothing
+          etymology: "clothing2", // Etymology about clothing
+          img: "/logo512.png", // Path to imag
+        },
+      ],
+      etymology: "sunny 20", // Etymology about the weather
+    },
+  },
+  // The weather condition
+  snow: {
+    // The temperature limit
+    "-10": {
+      // Array of clothing layers
+      clothingLayers: [
+        {
+          name: "Test", // Name of clothing
+          etymology: "clothing", // Etymology about clothing
+          img: "/logo192.png", // Path to imag
+        },
+        {
+          name: "Test2", // Name of clothing
+          etymology: "clothing2", // Etymology about clothing
+          img: "/logo512.png", // Path to imag
+        },
+      ],
+      etymology: "snow -10", // Etymology about the weather
+    }, // The temperature limit
+    "0": {
+      // Array of clothing layers
+      clothingLayers: [
+        {
+          name: "Test", // Name of clothing
+          etymology: "clothing", // Etymology about clothing
+          img: "/logo192.png", // Path to imag
+        },
+        {
+          name: "Test2", // Name of clothing
+          etymology: "clothing2", // Etymology about clothing
+          img: "/logo512.png", // Path to imag
+        },
+      ],
+      etymology: "snow 0", // Etymology about the weather
+    },
+    // The temperature limit
+    "10": {
+      // Array of clothing layers
+      clothingLayers: [
+        {
+          name: "Test", // Name of clothing
+          etymology: "clothing", // Etymology about clothing
+          img: "/logo192.png", // Path to imag
+        },
+        {
+          name: "Test2", // Name of clothing
+          etymology: "clothing2", // Etymology about clothing
+          img: "/logo512.png", // Path to imag
+        },
+      ],
+      etymology: "snow 10", // Etymology about the weather
+    },
+    // The temperature limit
+    "20": {
+      // Array of clothing layers
+      clothingLayers: [
+        {
+          name: "Test", // Name of clothing
+          etymology: "clothing", // Etymology about clothing
+          img: "/logo192.png", // Path to imag
+        },
+        {
+          name: "Test2", // Name of clothing
+          etymology: "clothing2", // Etymology about clothing
+          img: "/logo512.png", // Path to imag
+        },
+      ],
+      etymology: "snow 20", // Etymology about the weather
+    },
+  },
+  // The weather condition
+  rain: {
+    // The temperature limit
+    "-10": {
+      // Array of clothing layers
+      clothingLayers: [
+        {
+          name: "Test", // Name of clothing
+          etymology: "clothing", // Etymology about clothing
+          img: "/logo192.png", // Path to imag
+        },
+        {
+          name: "Test2", // Name of clothing
+          etymology: "clothing2", // Etymology about clothing
+          img: "/logo512.png", // Path to imag
+        },
+      ],
+      etymology: "rain -10", // Etymology about the weather
+    }, // The temperature limit
+    "0": {
+      // Array of clothing layers
+      clothingLayers: [
+        {
+          name: "Test", // Name of clothing
+          etymology: "clothing", // Etymology about clothing
+          img: "/logo192.png", // Path to imag
+        },
+        {
+          name: "Test2", // Name of clothing
+          etymology: "clothing2", // Etymology about clothing
+          img: "/logo512.png", // Path to imag
+        },
+      ],
+      etymology: "rain 0", // Etymology about the weather
+    },
+    // The temperature limit
+    "10": {
+      // Array of clothing layers
+      clothingLayers: [
+        {
+          name: "Test", // Name of clothing
+          etymology: "clothing", // Etymology about clothing
+          img: "/logo192.png", // Path to imag
+        },
+        {
+          name: "Test2", // Name of clothing
+          etymology: "clothing2", // Etymology about clothing
+          img: "/logo512.png", // Path to imag
+        },
+      ],
+      etymology: "rain 10", // Etymology about the weather
+    },
+    // The temperature limit
+    "20": {
+      // Array of clothing layers
+      clothingLayers: [
+        {
+          name: "Test", // Name of clothing
+          etymology: "clothing", // Etymology about clothing
+          img: "/logo192.png", // Path to imag
+        },
+        {
+          name: "Test2", // Name of clothing
+          etymology: "clothing2", // Etymology about clothing
+          img: "/logo512.png", // Path to imag
+        },
+      ],
+      etymology: "rain 20", // Etymology about the weather
     },
   },
 };
