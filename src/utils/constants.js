@@ -29,12 +29,12 @@ export const cities = [
 
 // List of weather and what should display for that weather
 export const weather = {
+  // The weather condition
   sunny: {
-    // The weather condition
+    // The temperature limit
     "-10": {
-      // The temperature limit
+      // Array of clothing layers
       clothingLayers: [
-        // Array of clothing layers
         {
           name: "Test", // Name of clothing
           etymology: "clothing", // Etymology about clothing

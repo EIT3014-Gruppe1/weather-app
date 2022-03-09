@@ -1,35 +1,39 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CharacterDisplay } from "./CharacterDisplay";
 import { EtymologyDisplay } from "./EtymologyDisplay";
 import { weather } from "../utils/constants";
 
-// Function for finding the best clothes given the weather
-const getIdealClothing = (data) => {
-  /* HERE SHOULD BE LOGIC FOR WHICH CLOTHES TO RETURN BASED ON WEATHER*/
-  return weather.sunny["-10"].clothingLayers;
+// Function for deciding what should be displayed given the current weather
+const getInfoFromWeather = (data) => {
+  /* HERE SHOULD BE LOGIC FOR WHICH CLOTHES AND INFO TO RETURN BASED ON WEATHER*/
+  return weather.sunny["-10"];
 };
 
 export const InfoDisplay = ({ data }) => {
-  let idealClothing = getIdealClothing(data);
-  const [layerIndex, setLayerIndex] = useState(0);
+  let weatherInfo = getInfoFromWeather(data);
+  const [clothingLayerIndex, setClothingLayerIndex] = useState(0);
 
-  const incrementLayerIndex = () => {
-    let newLayerIndex = layerIndex + 1;
-    if (newLayerIndex >= idealClothing.length) {
-      newLayerIndex = 0;
+  const incrementClothingLayerIndex = () => {
+    let newClothingLayerIndex = clothingLayerIndex + 1;
+    if (newClothingLayerIndex >= weatherInfo.clothingLayers.length) {
+      newClothingLayerIndex = 0;
     }
-    setLayerIndex(newLayerIndex);
+    setClothingLayerIndex(newClothingLayerIndex);
   };
+
+  useEffect(() => {
+    setClothingLayerIndex(0)
+  }, [data])
 
   return (
     <div className="main-container">
       <div className="etymology-container">
-        <EtymologyDisplay clothing={idealClothing[layerIndex]} />
+        <EtymologyDisplay clothingEtymology={weatherInfo.clothingLayers[clothingLayerIndex].etymology} weatherEtymology={weatherInfo.etymology} />
       </div>
       <div className="character-container">
         <CharacterDisplay
-          clothing={idealClothing[layerIndex]}
-          onClick={incrementLayerIndex}
+          clothing={weatherInfo.clothingLayers[clothingLayerIndex]}
+          onClick={incrementClothingLayerIndex}
         />
       </div>
     </div>

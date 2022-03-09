@@ -1,10 +1,11 @@
 // Component for displaying etymology
-export const EtymologyDisplay = ({ clothing }) => {
+export const EtymologyDisplay = ({ clothingEtymology, weatherEtymology }) => {
   return (
     <div>
       {/* <h2>{title.charAt(0).toUpperCase() + title.slice(1)}</h2> */}
       <br />
-      {clothing.etymology}
+      <h1>{weatherEtymology}</h1>
+      {clothingEtymology}
       {/* <br />
     Regn har en stor rolle i vannets kretsløp, der fuktighet fra havet fordamper
     og kondenserer til skyer, for så å falle tilbake til jorden som nedbør, og
