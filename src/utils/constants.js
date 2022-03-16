@@ -1,114 +1,247 @@
 // list of coords for top cities in Norway
 export const cities = [
- {
-  name: "Trondheim",
-  latitude: 63.430515,
-  longitude: 10.395053,
- },
- {
-  name: "Oslo",
-  latitude: 59.913868,
-  longitude: 10.752245,
- },
- {
-  name: "Bergen",
-  latitude: 60.391262,
-  longitude: 5.322054,
- },
- {
-  name: "Stavanger",
-  latitude: 58.969975,
-  longitude: 5.733107,
- },
- {
-  name: "Bodø",
-  latitude: 67.279999,
-  longitude: 14.40501,
- },
+  {
+    name: "Trondheim",
+    latitude: 63.430515,
+    longitude: 10.395053,
+  },
+  {
+    name: "Oslo",
+    latitude: 59.913868,
+    longitude: 10.752245,
+  },
+  {
+    name: "Bergen",
+    latitude: 60.391262,
+    longitude: 5.322054,
+  },
+  {
+    name: "Stavanger",
+    latitude: 58.969975,
+    longitude: 5.733107,
+  },
+  {
+    name: "Bodø",
+    latitude: 67.279999,
+    longitude: 14.40501,
+  },
 ];
 
-// List of clothes
-export const clothes = {
-  headwear:[
-    {
-      name: "lue",
-      temperature: 5,
-      rain_proof: false,
-      image: "head_wear/lue.png",
-      about:
-       "A nice lue",
-     },
-    ],
- upper_body: {
-  innerwear: [
-   {
-    name: "tskjorte",
-    temperature: 20,
-    rain_proof: false,
-    image: "upper_body/tshirt.png",
-    about:
-     "T-skjorte, også kalt T-trøye, er en enkel skjorte eller trøye med rette linjer og korte eller lange ermer, som gir den form av en T",
-   },
-   {
-    name: "skjorte",
-    temperature: 25,
-    rain_proof: false,
-    image: "upper_body/skjorte.png",
-    about:
-     "Skjorte",
-   },
-  ],
-  outerwear: [
-   {
-    name: "boblejakke",
-    temperature: -5,
-    rain_proof: false,
-    image: "upper_body/dunjakke.png",
-    about:
-     "Dunjakke, også kjent som «boblejakke», er en vattert jakke som er fylt med enten ande- eller gåsedun, eller syntetisk dun. Luftlommene som dannes mellom dunene gjør at jakken kan holde på varm luft.",
-   },
-   {
-    name: "hettegenser",
-    temperature: 15,
-    rain_proof: false,
-    image: "upper_body/hoodie.png",
-    about: "En hettegenser er en genser med hette.",
-   },
-   {
-    name: "regnjakke",
-    temperature: 15,
-    rain_proof: true,
-    image: "upper_body/skalljakke.png",
-    about:
-     "Regntøy er klær laget av tekstiler som er spesielt behandlet for å holde nedbør i form av regn på utsiden av plagget/plaggene.",
-   },
-  ],
- },
- lower_body: {
-  pants: [
-   {
-    name: "jeans",
-    temperature: 0,
-    rain_proof: true,
-    image: "lower_body/lyse_jeans.png",
-    about: "Vanlig bukse my guy!",
-   },
-   {
-    name: "shorts",
-    temperature: 20,
-    rain_proof: true,
-    image: "lower_body/shorts.png",
-    about: "shorts",
-   },
-  ],
- },
- footwear:  [
-   {
-    name: "vintersko",
-    temperature: 0,
-    rain_proof: true,
-    image: "footwear/vintersko.png",
-    about: "Just some shoes",
-   },
-  ],
+// List of weather and what should display for that weather
+export const weather = {
+  // The weather condition
+  sunny: {
+    // The temperature limit
+    "-10": {
+      // Array of clothing layers
+      clothingLayers: [
+        {
+          name: "Lag 1", // Name of clothing
+          etymology: "clothing", // Etymology about clothing
+          img: "Kaldt_L1.png", // Path to imag
+        },
+        {
+          name: "Lag 2", // Name of clothing
+          etymology: "clothing2", // Etymology about clothing
+          img: "Kaldt_L2.png", // Path to imag
+        },
+        {
+          name: "Lag 3", // Name of clothing
+          etymology: "clothing3", // Etymology about clothing
+          img: "Kaldt_L3png", // Path to imag
+        },
+      ],
+      etymology: "sunny -10", // Etymology about the weather
+    }, // The temperature limit
+    "0": {
+      // Array of clothing layers
+      clothingLayers: [
+        {
+          name: "Test", // Name of clothing
+          etymology: "clothing", // Etymology about clothing
+          img: "logo192.png", // Path to imag
+        },
+        {
+          name: "Test2", // Name of clothing
+          etymology: "clothing2", // Etymology about clothing
+          img: "logo512.png", // Path to imag
+        },
+      ],
+      etymology: "sunny 0", // Etymology about the weather
+    },
+    // The temperature limit
+    "10": {
+      // Array of clothing layers
+      clothingLayers: [
+        {
+          name: "Lag 1", // Name of clothing
+          etymology: "clothing", // Etymology about clothing
+          img: "Vaar_L1.png", // Path to imag
+        },
+        {
+          name: "Lag 2", // Name of clothing
+          etymology: "clothing2", // Etymology about clothing
+          img: "Vaar_L2.png", // Path to imag
+        },
+      ],
+      etymology: "sunny 10", // Etymology about the weather
+    },
+    // The temperature limit
+    "20": {
+      // Array of clothing layers
+      clothingLayers: [
+        {
+          name: "Test", // Name of clothing
+          etymology: "clothing", // Etymology about clothing
+          img: "logo192.png", // Path to imag
+        },
+        {
+          name: "Test2", // Name of clothing
+          etymology: "clothing2", // Etymology about clothing
+          img: "logo512.png", // Path to imag
+        },
+      ],
+      etymology: "sunny 20", // Etymology about the weather
+    },
+  },
+  // The weather condition
+  snow: {
+    // The temperature limit
+    "-10": {
+      // Array of clothing layers
+      clothingLayers: [
+        {
+          name: "Test", // Name of clothing
+          etymology: "clothing", // Etymology about clothing
+          img: "logo192.png", // Path to imag
+        },
+        {
+          name: "Test2", // Name of clothing
+          etymology: "clothing2", // Etymology about clothing
+          img: "logo512.png", // Path to imag
+        },
+      ],
+      etymology: "snow -10", // Etymology about the weather
+    }, // The temperature limit
+    "0": {
+      // Array of clothing layers
+      clothingLayers: [
+        {
+          name: "Test", // Name of clothing
+          etymology: "clothing", // Etymology about clothing
+          img: "logo192.png", // Path to imag
+        },
+        {
+          name: "Test2", // Name of clothing
+          etymology: "clothing2", // Etymology about clothing
+          img: "logo512.png", // Path to imag
+        },
+      ],
+      etymology: "snow 0", // Etymology about the weather
+    },
+    // The temperature limit
+    "10": {
+      // Array of clothing layers
+      clothingLayers: [
+        {
+          name: "Test", // Name of clothing
+          etymology: "clothing", // Etymology about clothing
+          img: "logo192.png", // Path to imag
+        },
+        {
+          name: "Test2", // Name of clothing
+          etymology: "clothing2", // Etymology about clothing
+          img: "logo512.png", // Path to imag
+        },
+      ],
+      etymology: "snow 10", // Etymology about the weather
+    },
+    // The temperature limit
+    "20": {
+      // Array of clothing layers
+      clothingLayers: [
+        {
+          name: "Test", // Name of clothing
+          etymology: "clothing", // Etymology about clothing
+          img: "logo192.png", // Path to imag
+        },
+        {
+          name: "Test2", // Name of clothing
+          etymology: "clothing2", // Etymology about clothing
+          img: "logo512.png", // Path to imag
+        },
+      ],
+      etymology: "snow 20", // Etymology about the weather
+    },
+  },
+  // The weather condition
+  rain: {
+    // The temperature limit
+    "-10": {
+      // Array of clothing layers
+      clothingLayers: [
+        {
+          name: "Test", // Name of clothing
+          etymology: "clothing", // Etymology about clothing
+          img: "logo192.png", // Path to imag
+        },
+        {
+          name: "Test2", // Name of clothing
+          etymology: "clothing2", // Etymology about clothing
+          img: "logo512.png", // Path to imag
+        },
+      ],
+      etymology: "rain -10", // Etymology about the weather
+    }, // The temperature limit
+    "0": {
+      // Array of clothing layers
+      clothingLayers: [
+        {
+          name: "Test", // Name of clothing
+          etymology: "clothing", // Etymology about clothing
+          img: "logo192.png", // Path to imag
+        },
+        {
+          name: "Test2", // Name of clothing
+          etymology: "clothing2", // Etymology about clothing
+          img: "logo512.png", // Path to imag
+        },
+      ],
+      etymology: "rain 0", // Etymology about the weather
+    },
+    // The temperature limit
+    "10": {
+      // Array of clothing layers
+      clothingLayers: [
+        {
+          name: "Test", // Name of clothing
+          etymology: "clothing", // Etymology about clothing
+          img: "logo192.png", // Path to imag
+        },
+        {
+          name: "Test2", // Name of clothing
+          etymology: "clothing2", // Etymology about clothing
+          img: "logo512.png", // Path to imag
+        },
+      ],
+      etymology: "rain 10", // Etymology about the weather
+    },
+    // The temperature limit
+    "20": {
+      // Array of clothing layers
+      clothingLayers: [
+        {
+          name: "Test", // Name of clothing
+          etymology: "clothing", // Etymology about clothing
+          img: "logo192.png", // Path to imag
+        },
+        {
+          name: "Test2", // Name of clothing
+          etymology: "clothing2", // Etymology about clothing
+          img: "logo512.png", // Path to imag
+        },
+      ],
+      etymology: "rain 20", // Etymology about the weather
+    },
+  },
 };

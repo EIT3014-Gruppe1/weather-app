@@ -5,7 +5,7 @@ import { cities } from "./utils/constants";
 import { NavBar } from "./components/NavBar";
 import { weatherDataFormatter } from "./utils/weatherDataFormatter";
 import { InfoDisplay } from "./components/InfoDisplay";
-import "./app.css"
+import "./App.css"
 
 const dataFormat = {
  now: {

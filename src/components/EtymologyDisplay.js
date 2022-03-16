@@ -1,18 +1,12 @@
 // Component for displaying etymology
-export const EtymologyDisplay = ({ clothing }) => {
- return (
-  <div >
-    {/* <h2>{title.charAt(0).toUpperCase() + title.slice(1)}</h2> */}
-    <br />
-    {Object.entries(clothing).map(([key, value]) => {
-     return (
-      <>
-       <h2>{value.name.charAt(0).toUpperCase() + value.name.slice(1)}</h2>
-       <p>{value.about}</p>
-      </>
-     );
-    })}
-    {/* <br />
+export const EtymologyDisplay = ({ clothingEtymology, weatherEtymology }) => {
+  return (
+    <div>
+      {/* <h2>{title.charAt(0).toUpperCase() + title.slice(1)}</h2> */}
+      <br />
+      <h1>{weatherEtymology}</h1>
+      {clothingEtymology}
+      {/* <br />
     Regn har en stor rolle i vannets kretsløp, der fuktighet fra havet fordamper
     og kondenserer til skyer, for så å falle tilbake til jorden som nedbør, og
     til slutt renner tilbake igjen til havet via elver. En liten del av
@@ -47,6 +41,6 @@ export const EtymologyDisplay = ({ clothing }) => {
     dråpestørrelsen. I havnivå uten vind vil yr med dråpestørrelse på 0,5 mm ha
     en fart på omtrent 2 m/s, mens dråper på 5 mm har en fart på rundt 9 m/s.
     <br /> */}
-   </div>
- );
+    </div>
+  );
 };

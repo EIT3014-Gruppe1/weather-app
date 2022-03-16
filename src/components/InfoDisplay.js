@@ -1,61 +1,73 @@
+import { useEffect, useState } from "react";
 import { CharacterDisplay } from "./CharacterDisplay";
 import { EtymologyDisplay } from "./EtymologyDisplay";
-import { clothes } from "../utils/constants";
+import { weather } from "../utils/constants";
 
-const getClothClosestToCurrentTemp = (clothingArray, currentTemperature) => {
-  return clothingArray.reduce((prev, curr) => {
-    return Math.abs(curr.temperature - currentTemperature) <
-      Math.abs(prev.temperature - currentTemperature)
-      ? curr
-      : prev;
-  });
+// Function for getting the high level weather category
+const getHighLevelWeather = (data, temperature) => {
+  let highLevelWeather = weather
+  let isPercipitation = data.next_1_hour.probability_of_precipitation > 0.5 || data.next_1_hour.precipitation_amount > 0.1
+  let isRaining = isPercipitation && temperature > 0
+  let isSnowing = isPercipitation && temperature < 0
+  let isSunny = !isRaining && !isSnowing
+
+  if (isRaining)
+    highLevelWeather = highLevelWeather.rain
+  if (isSnowing)
+    highLevelWeather = highLevelWeather.snow
+  if (isSunny)
+    highLevelWeather = highLevelWeather.sunny
+
+  return highLevelWeather
 }
 
-// Function for finding the best clothes given the weather
-const getIdealClothing = (data) => {
-  let currentTemperature = data.now.temperature;
-  let isRaining = data.next_1_hour.probability_of_precipitation > 70;
-  let potentialHat = clothes.headwear;
-  let potentialJacket = clothes.upper_body.outerwear;
-  let potentialShirt = clothes.upper_body.innerwear;
-  let potentialPants = clothes.lower_body.pants;
-  let potentialShoes = clothes.footwear;
+// Function for getting the data within a temperature given a weather category
+const getDetailLevelWeather = (highLevelWeather, temperature) => {
+  if (temperature <= -5)
+    return highLevelWeather["-10"]
+  if (temperature <= 5)
+    return highLevelWeather["0"]
+  if (temperature <= 15)
+    return highLevelWeather["10"]
 
-  let idealClothing = {
-    headwear: [],
-    outerwear: [],
-    innerwear: [],
-    pants: [],
-    footwear: [],
-  };
-  
-  // If it is raining filter out all non-rain proof clothes
-  if (currentTemperature > 0 && isRaining) {
-    potentialJacket = potentialJacket.filter((clothing) => {
-      //console.log(clothing.rain_proof === true);
-      return clothing.rain_proof;
-    });
-  }
+  return highLevelWeather["20"]
+}
 
-  // Find the clothing with closest temperature to current temperature
-  idealClothing.outerwear = getClothClosestToCurrentTemp(potentialJacket, currentTemperature)
-  idealClothing.innerwear = getClothClosestToCurrentTemp(potentialShirt, currentTemperature)
-  idealClothing.pants = getClothClosestToCurrentTemp(potentialPants, currentTemperature)
-  idealClothing.footwear = getClothClosestToCurrentTemp(potentialShoes, currentTemperature)
-  idealClothing.headwear = getClothClosestToCurrentTemp(potentialHat, currentTemperature)
+// Function for deciding what should be displayed given the current weather
+const getInfoFromWeather = (data) => {
+  let temperature = data.now.temperature
+  let highLevelWeather = getHighLevelWeather(data, temperature)
+  let detailLevelWeather = getDetailLevelWeather(highLevelWeather, temperature)
 
-  return idealClothing;
+  return detailLevelWeather;
 };
 
 export const InfoDisplay = ({ data }) => {
-  let idealClothing = getIdealClothing(data);
+  let weatherInfo = getInfoFromWeather(data);
+  const [clothingLayerIndex, setClothingLayerIndex] = useState(0);
+
+  const incrementClothingLayerIndex = () => {
+    let newClothingLayerIndex = clothingLayerIndex + 1;
+    if (newClothingLayerIndex >= weatherInfo.clothingLayers.length) {
+      newClothingLayerIndex = 0;
+    }
+    setClothingLayerIndex(newClothingLayerIndex);
+  };
+
+  useEffect(() => {
+    setClothingLayerIndex(0)
+  }, [data])
+
   return (
     <div className="main-container">
       <div className="etymology-container">
-        <EtymologyDisplay clothing={idealClothing} />
+        <EtymologyDisplay clothingEtymology={weatherInfo.clothingLayers[clothingLayerIndex].etymology} weatherEtymology={weatherInfo.etymology} />
       </div>
       <div className="character-container">
-        <CharacterDisplay upperbody={[ idealClothing.outerwear, idealClothing.innerwear]} lowerbody={[idealClothing.pants]} footwear={[idealClothing.footwear]} headwear={[idealClothing.headwear]}/>
+        <CharacterDisplay
+          clothing={weatherInfo.clothingLayers[clothingLayerIndex]}
+          onClick={incrementClothingLayerIndex}
+        />
       </div>
     </div>
   );
