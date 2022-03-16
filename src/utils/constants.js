@@ -36,14 +36,19 @@ export const weather = {
       // Array of clothing layers
       clothingLayers: [
         {
-          name: "Test", // Name of clothing
+          name: "Lag 1", // Name of clothing
           etymology: "clothing", // Etymology about clothing
-          img: "/logo192.png", // Path to imag
+          img: "Kaldt_L1.png", // Path to imag
         },
         {
-          name: "Test2", // Name of clothing
+          name: "Lag 2", // Name of clothing
           etymology: "clothing2", // Etymology about clothing
-          img: "/logo512.png", // Path to imag
+          img: "Kaldt_L2.png", // Path to imag
+        },
+        {
+          name: "Lag 3", // Name of clothing
+          etymology: "clothing3", // Etymology about clothing
+          img: "Kaldt_L3png", // Path to imag
         },
       ],
       etymology: "sunny -10", // Etymology about the weather
@@ -54,12 +59,12 @@ export const weather = {
         {
           name: "Test", // Name of clothing
           etymology: "clothing", // Etymology about clothing
-          img: "/logo192.png", // Path to imag
+          img: "logo192.png", // Path to imag
         },
         {
           name: "Test2", // Name of clothing
           etymology: "clothing2", // Etymology about clothing
-          img: "/logo512.png", // Path to imag
+          img: "logo512.png", // Path to imag
         },
       ],
       etymology: "sunny 0", // Etymology about the weather
@@ -69,14 +74,14 @@ export const weather = {
       // Array of clothing layers
       clothingLayers: [
         {
-          name: "Test", // Name of clothing
+          name: "Lag 1", // Name of clothing
           etymology: "clothing", // Etymology about clothing
-          img: "/logo192.png", // Path to imag
+          img: "Vaar_L1.png", // Path to imag
         },
         {
-          name: "Test2", // Name of clothing
+          name: "Lag 2", // Name of clothing
           etymology: "clothing2", // Etymology about clothing
-          img: "/logo512.png", // Path to imag
+          img: "Vaar_L2.png", // Path to imag
         },
       ],
       etymology: "sunny 10", // Etymology about the weather
@@ -88,12 +93,12 @@ export const weather = {
         {
           name: "Test", // Name of clothing
           etymology: "clothing", // Etymology about clothing
-          img: "/logo192.png", // Path to imag
+          img: "logo192.png", // Path to imag
         },
         {
           name: "Test2", // Name of clothing
           etymology: "clothing2", // Etymology about clothing
-          img: "/logo512.png", // Path to imag
+          img: "logo512.png", // Path to imag
         },
       ],
       etymology: "sunny 20", // Etymology about the weather
@@ -108,12 +113,12 @@ export const weather = {
         {
           name: "Test", // Name of clothing
           etymology: "clothing", // Etymology about clothing
-          img: "/logo192.png", // Path to imag
+          img: "logo192.png", // Path to imag
         },
         {
           name: "Test2", // Name of clothing
           etymology: "clothing2", // Etymology about clothing
-          img: "/logo512.png", // Path to imag
+          img: "logo512.png", // Path to imag
         },
       ],
       etymology: "snow -10", // Etymology about the weather
@@ -124,12 +129,12 @@ export const weather = {
         {
           name: "Test", // Name of clothing
           etymology: "clothing", // Etymology about clothing
-          img: "/logo192.png", // Path to imag
+          img: "logo192.png", // Path to imag
         },
         {
           name: "Test2", // Name of clothing
           etymology: "clothing2", // Etymology about clothing
-          img: "/logo512.png", // Path to imag
+          img: "logo512.png", // Path to imag
         },
       ],
       etymology: "snow 0", // Etymology about the weather
@@ -141,12 +146,12 @@ export const weather = {
         {
           name: "Test", // Name of clothing
           etymology: "clothing", // Etymology about clothing
-          img: "/logo192.png", // Path to imag
+          img: "logo192.png", // Path to imag
         },
         {
           name: "Test2", // Name of clothing
           etymology: "clothing2", // Etymology about clothing
-          img: "/logo512.png", // Path to imag
+          img: "logo512.png", // Path to imag
         },
       ],
       etymology: "snow 10", // Etymology about the weather
@@ -158,12 +163,12 @@ export const weather = {
         {
           name: "Test", // Name of clothing
           etymology: "clothing", // Etymology about clothing
-          img: "/logo192.png", // Path to imag
+          img: "logo192.png", // Path to imag
         },
         {
           name: "Test2", // Name of clothing
           etymology: "clothing2", // Etymology about clothing
-          img: "/logo512.png", // Path to imag
+          img: "logo512.png", // Path to imag
         },
       ],
       etymology: "snow 20", // Etymology about the weather
@@ -178,12 +183,12 @@ export const weather = {
         {
           name: "Test", // Name of clothing
           etymology: "clothing", // Etymology about clothing
-          img: "/logo192.png", // Path to imag
+          img: "logo192.png", // Path to imag
         },
         {
           name: "Test2", // Name of clothing
           etymology: "clothing2", // Etymology about clothing
-          img: "/logo512.png", // Path to imag
+          img: "logo512.png", // Path to imag
         },
       ],
       etymology: "rain -10", // Etymology about the weather
@@ -194,12 +199,12 @@ export const weather = {
         {
           name: "Test", // Name of clothing
           etymology: "clothing", // Etymology about clothing
-          img: "/logo192.png", // Path to imag
+          img: "logo192.png", // Path to imag
         },
         {
           name: "Test2", // Name of clothing
           etymology: "clothing2", // Etymology about clothing
-          img: "/logo512.png", // Path to imag
+          img: "logo512.png", // Path to imag
         },
       ],
       etymology: "rain 0", // Etymology about the weather
@@ -211,12 +216,12 @@ export const weather = {
         {
           name: "Test", // Name of clothing
           etymology: "clothing", // Etymology about clothing
-          img: "/logo192.png", // Path to imag
+          img: "logo192.png", // Path to imag
         },
         {
           name: "Test2", // Name of clothing
           etymology: "clothing2", // Etymology about clothing
-          img: "/logo512.png", // Path to imag
+          img: "logo512.png", // Path to imag
         },
       ],
       etymology: "rain 10", // Etymology about the weather
@@ -228,12 +233,12 @@ export const weather = {
         {
           name: "Test", // Name of clothing
           etymology: "clothing", // Etymology about clothing
-          img: "/logo192.png", // Path to imag
+          img: "logo192.png", // Path to imag
         },
         {
           name: "Test2", // Name of clothing
           etymology: "clothing2", // Etymology about clothing
-          img: "/logo512.png", // Path to imag
+          img: "logo512.png", // Path to imag
         },
       ],
       etymology: "rain 20", // Etymology about the weather
