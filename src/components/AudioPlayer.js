@@ -21,14 +21,15 @@ const loopCrossFade = 10;
 // Plays and pauses the audio given by the url
 const useAudio = (url, loop) => {
   const [audio, setAudio] = useState([]);
-  const [loopAudio, setLoopAudio] = useState([]);
+  const [loopAudio, setLoopAudio] = useState([]); // Need duplicated audio to start loop before audio ends
 
   const [playing, setPlaying] = useState(false);
 
   // Toggle the audio state
   const toggle = () => setPlaying(!playing);
 
-  const playAudio = (useLoopAudio=false) => {
+  // Plays audio, if we start loop, play loopAudio
+  const playAudio = (useLoopAudio = false) => {
     if (!useLoopAudio) {
       for (let i = 0; i < audio.length; i++) {
         audio[i].play();
@@ -40,6 +41,7 @@ const useAudio = (url, loop) => {
     }
   };
 
+  // Pauses all audio
   const pauseAudio = () => {
     for (let i = 0; i < audio.length; i++) {
       audio[i].pause();
@@ -58,8 +60,8 @@ const useAudio = (url, loop) => {
       loopAudios.push(new Audio(url[i]));
     }
     pauseAudio();
-    setAudio(audios) 
-    setLoopAudio(loopAudios)
+    setAudio(audios);
+    setLoopAudio(loopAudios);
   }, [url[0], url[1]]);
 
   // Plays or pauses the audio clip based on button state
@@ -73,7 +75,7 @@ const useAudio = (url, loop) => {
     let timeLeft = 999999999;
     let useLoopAudio = false;
 
-    // Check timeleft of track every second 
+    // Check timeleft of track every second
     const interval = setInterval(() => {
       if (useLoopAudio)
         timeLeft = loopAudio[0].duration - loopAudio[0].currentTime;
@@ -82,7 +84,7 @@ const useAudio = (url, loop) => {
       if (loop) {
         if (timeLeft < loopCrossFade) {
           playAudio(!useLoopAudio);
-          useLoopAudio = ! useLoopAudio
+          useLoopAudio = !useLoopAudio;
         }
       } else if (timeLeft === 0) {
         setPlaying(false);
@@ -97,6 +99,7 @@ const useAudio = (url, loop) => {
   return [playing, toggle];
 };
 
+// For easy access, contains path to audio
 const audio = {
   sunny: {
     main: sun_main,
@@ -111,9 +114,10 @@ const audio = {
   },
 };
 
-// Returns an audioplayer component
-// Takes in the url to an auido clip and a boolean for looping
+// Returns an audioplayer component according to weather
+// Takes eatherClass, windLevel, rainLevel and a boolean for looping
 const AudioPlayer = ({ weatherClass, windLevel, rainLevel, loop }) => {
+  // Add audiotrack according to weather
   let audioTracks = [
     audio[weatherClass].main,
     audio[weatherClass].chimes[windLevel],

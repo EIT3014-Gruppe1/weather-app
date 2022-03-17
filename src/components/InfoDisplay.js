@@ -1,40 +1,55 @@
 import { useEffect, useState } from "react";
 import { CharacterDisplay } from "./CharacterDisplay";
-import { EtymologyDisplay } from "./EtymologyDisplay";
-import { useWeather } from "../utils/useWeather";
-import { weather } from "../utils/constants"
+import { WeatherEtymologyDisplay } from "./WeatherEtymologyDisplay";
+import { ClothingEtymologyDisplay } from "./ClothingEtymologyDisplay";
+import { clothing } from "../utils/constants";
 
-const getClothing = (weatherInfo) => {
-  return weather[weatherInfo.weatherClass][weatherInfo.temperatureClass]
-}
+// Component displaying etymology info and clothing info/image
+export const InfoDisplay = ({ weatherInfo }) => {
+  // State for choosing to view clothing or weather etymology
+  const [viewClothingEtymology, setViewClothingEtymology] = useState(false);
 
-export const InfoDisplay = ({ data }) => {
-  let weatherInfo = useWeather(data);
-  const [clothingInfo, setClothingInfo] = useState(weather["sunny"]["20"])
+  const [clothingInfo, setClothingInfo] = useState(
+    clothing["sunny"]["20"].clothingLayers
+  );
   const [clothingLayerIndex, setClothingLayerIndex] = useState(0);
 
+  // Browse through the clothing layers
   const incrementClothingLayerIndex = () => {
     let newClothingLayerIndex = clothingLayerIndex + 1;
-    if (newClothingLayerIndex >= clothingInfo.clothingLayers.length) {
+    if (newClothingLayerIndex >= clothingInfo.length) {
       newClothingLayerIndex = 0;
     }
     setClothingLayerIndex(newClothingLayerIndex);
   };
 
+  // Toggle view of clothing or weather etymology
+  const toggleView = () => setViewClothingEtymology(!viewClothingEtymology);
+
+  // Set clothing info according to weather
   useEffect(() => {
-    setClothingInfo(getClothing(weatherInfo));
-    setClothingLayerIndex(0)
-  }, [data])
+    setClothingInfo(
+      clothing[weatherInfo.weatherClass][weatherInfo.temperatureClass]
+        .clothingLayers
+    );
+    setClothingLayerIndex(0);
+  }, [weatherInfo]);
 
   return (
     <div className="main-container">
-      <div className="etymology-container">
-        <EtymologyDisplay clothingEtymology={clothingInfo.clothingLayers[clothingLayerIndex].etymology} weatherEtymology={clothingInfo.etymology} />
+      <div className="etymology-container" onClick={toggleView}>
+        {viewClothingEtymology ? (
+          <ClothingEtymologyDisplay
+            clothingLayer={clothingInfo[clothingLayerIndex].clothing}
+          />
+        ) : (
+          <WeatherEtymologyDisplay weatherInfo={weatherInfo} />
+        )}
       </div>
       <div className="character-container">
         <CharacterDisplay
-          clothing={clothingInfo.clothingLayers[clothingLayerIndex]}
-          onClick={incrementClothingLayerIndex}
+          incrementClothingLayerIndex={incrementClothingLayerIndex}
+          clothingLayer={clothingInfo[clothingLayerIndex]}
         />
       </div>
     </div>

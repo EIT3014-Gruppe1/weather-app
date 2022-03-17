@@ -27,8 +27,8 @@ export const cities = [
   },
 ];
 
-// List of weather and what should display for that weather
-export const weather = {
+// List of weather and what clothing should display for that weather
+export const clothing = {
   // The weather condition
   sunny: {
     // The temperature limit
@@ -36,72 +36,62 @@ export const weather = {
       // Array of clothing layers
       clothingLayers: [
         {
-          name: "Lag 1", // Name of clothing
-          etymology: "clothing", // Etymology about clothing
+          clothing: [{ name: "Lag 1", etymology: "clothing" }],
           img: "Kaldt_L1.png", // Path to imag
         },
         {
-          name: "Lag 2", // Name of clothing
-          etymology: "clothing2", // Etymology about clothing
+          clothing: [{ name: "Lag 2", etymology: "clothing2" }],
           img: "Kaldt_L2.png", // Path to imag
         },
         {
-          name: "Lag 3", // Name of clothing
-          etymology: "clothing3", // Etymology about clothing
+          clothing: [{ name: "Lag 3", etymology: "clothing3" }],
           img: "Kaldt_L3png", // Path to imag
         },
       ],
-      etymology: "sunny -10", // Etymology about the weather
     }, // The temperature limit
-    "0": {
+    0: {
       // Array of clothing layers
       clothingLayers: [
         {
-          name: "Test", // Name of clothing
-          etymology: "clothing", // Etymology about clothing
-          img: "logo192.png", // Path to imag
-        },
-        {
-          name: "Test2", // Name of clothing
-          etymology: "clothing2", // Etymology about clothing
-          img: "logo512.png", // Path to imag
-        },
-      ],
-      etymology: "sunny 0", // Etymology about the weather
-    },
-    // The temperature limit
-    "10": {
-      // Array of clothing layers
-      clothingLayers: [
-        {
-          name: "Lag 1", // Name of clothing
-          etymology: "clothing", // Etymology about clothing
-          img: "Vaar_L1.png", // Path to imag
-        },
-        {
-          name: "Lag 2", // Name of clothing
-          etymology: "clothing2", // Etymology about clothing
+          clothing: [{ name: "Lag 1", etymology: "clothing" }],
           img: "Vaar_L2.png", // Path to imag
         },
+        {
+          clothing: [{ name: "Lag 2", etymology: "clothing2" }],
+          img: "Vaar_L1.png", // Path to imag
+        },
       ],
-      etymology: "sunny 10", // Etymology about the weather
     },
     // The temperature limit
-    "20": {
+    10: {
       // Array of clothing layers
       clothingLayers: [
         {
-          name: "Test", // Name of clothing
-          etymology: "clothing", // Etymology about clothing
-          img: "logo192.png", // Path to imag
+          clothing: [{ name: "Lag 1", etymology: "clothing2" }],
+          img: "Vaar_L2.png", // Path to imag
         },
         {
-          name: "Test2", // Name of clothing
-          etymology: "clothing2", // Etymology about clothing
-          img: "logo512.png", // Path to imag
+          clothing: [
+            { name: "Tskjorte", etymology: "dhskfajhadskjfdsalkjf" },
+            { name: "Bukse", etymology: "fjhdasfkjdasfasdf" },
+          ],
+          img: "Vaar_L1.png", // Path to imag
         },
       ],
-      etymology: "sunny 20", // Etymology about the weather
+    },
+    // The temperature limit
+    20: {
+      // Array of clothing layers
+      clothingLayers: [
+        {
+          clothing: [{ name: "Lag 1", etymology: "clothing" }],
+          img: "Vaar_L2.png", // Path to imag
+        },
+        {
+          clothing: [{ name: "Lag 2", etymology: "clothing2" }],
+          img: "Vaar_L1.png", // Path to imag
+        },
+      ],
     },
   },
   // The weather condition
@@ -111,67 +101,55 @@ export const weather = {
       // Array of clothing layers
       clothingLayers: [
         {
-          name: "Test", // Name of clothing
-          etymology: "clothing", // Etymology about clothing
-          img: "logo192.png", // Path to imag
+          clothing: [{ name: "Lag 1", etymology: "clothing" }],
+          img: "Vaar_L2.png", // Path to imag
         },
         {
-          name: "Test2", // Name of clothing
-          etymology: "clothing2", // Etymology about clothing
-          img: "logo512.png", // Path to imag
+          clothing: [{ name: "Lag 2", etymology: "clothing2" }],
+          img: "Vaar_L1.png", // Path to imag
         },
       ],
-      etymology: "snow -10", // Etymology about the weather
     }, // The temperature limit
-    "0": {
+    0: {
       // Array of clothing layers
       clothingLayers: [
         {
-          name: "Test", // Name of clothing
-          etymology: "clothing", // Etymology about clothing
-          img: "logo192.png", // Path to imag
+          clothing: [{ name: "Lag 1", etymology: "clothing" }],
+          img: "Vaar_L2.png", // Path to imag
         },
         {
-          name: "Test2", // Name of clothing
-          etymology: "clothing2", // Etymology about clothing
-          img: "logo512.png", // Path to imag
+          clothing: [{ name: "Lag 2", etymology: "clothing2" }],
+          img: "Vaar_L1.png", // Path to imag
         },
       ],
-      etymology: "snow 0", // Etymology about the weather
     },
     // The temperature limit
-    "10": {
+    10: {
       // Array of clothing layers
       clothingLayers: [
         {
-          name: "Test", // Name of clothing
-          etymology: "clothing", // Etymology about clothing
-          img: "logo192.png", // Path to imag
+          clothing: [{ name: "Lag 1", etymology: "clothing" }],
+          img: "Vaar_L2.png", // Path to imag
         },
         {
-          name: "Test2", // Name of clothing
-          etymology: "clothing2", // Etymology about clothing
-          img: "logo512.png", // Path to imag
+          clothing: [{ name: "Lag 2", etymology: "clothing2" }],
+          img: "Vaar_L1.png", // Path to imag
         },
       ],
-      etymology: "snow 10", // Etymology about the weather
     },
     // The temperature limit
-    "20": {
+    20: {
       // Array of clothing layers
       clothingLayers: [
         {
-          name: "Test", // Name of clothing
-          etymology: "clothing", // Etymology about clothing
-          img: "logo192.png", // Path to imag
+          clothing: [{ name: "Lag 1", etymology: "clothing" }],
+          img: "Vaar_L2.png", // Path to imag
         },
         {
-          name: "Test2", // Name of clothing
-          etymology: "clothing2", // Etymology about clothing
-          img: "logo512.png", // Path to imag
+          clothing: [{ name: "Lag 2", etymology: "clothing2" }],
+          img: "Vaar_L1.png", // Path to imag
         },
       ],
-      etymology: "snow 20", // Etymology about the weather
     },
   },
   // The weather condition
@@ -181,67 +159,66 @@ export const weather = {
       // Array of clothing layers
       clothingLayers: [
         {
-          name: "Test", // Name of clothing
-          etymology: "clothing", // Etymology about clothing
-          img: "logo192.png", // Path to imag
+          clothing: [{ name: "Lag 1", etymology: "clothing" }],
+          img: "Vaar_L2.png", // Path to imag
         },
         {
-          name: "Test2", // Name of clothing
-          etymology: "clothing2", // Etymology about clothing
-          img: "logo512.png", // Path to imag
+          clothing: [{ name: "Lag 2", etymology: "clothing2" }],
+          img: "Vaar_L1.png", // Path to imag
         },
       ],
-      etymology: "rain -10", // Etymology about the weather
     }, // The temperature limit
-    "0": {
+    0: {
       // Array of clothing layers
       clothingLayers: [
         {
-          name: "Test", // Name of clothing
-          etymology: "clothing", // Etymology about clothing
-          img: "logo192.png", // Path to imag
+          clothing: [{ name: "Lag 1", etymology: "clothing" }],
+          img: "Vaar_L2.png", // Path to imag
         },
         {
-          name: "Test2", // Name of clothing
-          etymology: "clothing2", // Etymology about clothing
-          img: "logo512.png", // Path to imag
+          clothing: [{ name: "Lag 2", etymology: "clothing2" }],
+          img: "Vaar_L1.png", // Path to imag
         },
       ],
-      etymology: "rain 0", // Etymology about the weather
     },
     // The temperature limit
-    "10": {
+    10: {
       // Array of clothing layers
       clothingLayers: [
         {
-          name: "Test", // Name of clothing
-          etymology: "clothing", // Etymology about clothing
-          img: "logo192.png", // Path to imag
+          clothing: [{ name: "Lag 1", etymology: "clothing" }],
+          img: "Vaar_L2.png", // Path to imag
         },
         {
-          name: "Test2", // Name of clothing
-          etymology: "clothing2", // Etymology about clothing
-          img: "logo512.png", // Path to imag
+          clothing: [{ name: "Lag 2", etymology: "clothing2" }],
+          img: "Vaar_L1.png", // Path to imag
         },
       ],
-      etymology: "rain 10", // Etymology about the weather
     },
     // The temperature limit
-    "20": {
+    20: {
       // Array of clothing layers
       clothingLayers: [
         {
-          name: "Test", // Name of clothing
-          etymology: "clothing", // Etymology about clothing
-          img: "logo192.png", // Path to imag
+          clothing: [{ name: "Lag 1", etymology: "clothing" }],
+          img: "Vaar_L2.png", // Path to imag
         },
         {
-          name: "Test2", // Name of clothing
-          etymology: "clothing2", // Etymology about clothing
-          img: "logo512.png", // Path to imag
+          clothing: [{ name: "Lag 2", etymology: "clothing2" }],
+          img: "Vaar_L1.png", // Path to imag
         },
       ],
-      etymology: "rain 20", // Etymology about the weather
     },
   },
+};
+
+export const weatherEtymology = {
+  clearsky_day: { name: "Clear sky day", etymology: "hjfadkjfh" },
+};
+
+export const getMappedWeatherEtymology = (yrWeatherClass) => {
+  // TODO: Map from yrWeatherClass to something existing in weatherEtymology
+
+  let mapping = "clearsky_day";
+  return weatherEtymology[mapping];
 };

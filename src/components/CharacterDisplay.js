@@ -1,13 +1,15 @@
 import "../styles/character.css";
 
 // Component for displaying character with clothes
-export const CharacterDisplay = ({ clothing, onClick }) => {
+export const CharacterDisplay = ({
+  clothingLayer,
+  incrementClothingLayerIndex,
+}) => {
   return (
     <div className="character">
-      <h1>{clothing.name}</h1>
       <img
-        onClick={onClick}
-        src={`/assets/clothing/${clothing.img}`}
+        onClick={incrementClothingLayerIndex}
+        src={`/assets/clothing/${clothingLayer.img}`}
         alt="raincoat girl"
       />
     </div>
