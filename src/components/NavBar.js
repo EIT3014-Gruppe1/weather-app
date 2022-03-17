@@ -3,27 +3,6 @@ import { Navbar, Container } from "react-bootstrap";
 import AudioPlayer from "./AudioPlayer";
 import { CityDropdown } from "./CityDropdown";
 import { useWeather } from "../utils/useWeather";
-import sun_main from "../audio/sun/EiT Sun - Main Track 00.wav";
-import sun_wind2 from "../audio/sun/EiT Sun - Wind level 2 00.wav";
-import sun_wind3 from "../audio/sun/EiT Sun - Wind level 2 00.wav";
-import sun_windChimes1 from "../audio/sun/EiT Sun - Windchimes level 1 00.wav";
-import sun_windChimes2 from "../audio/sun/EiT Sun - Windchimes level 2 00.wav";
-import sun_windChimes3 from "../audio/sun/EiT Sun - Windchimes level 3 00.wav";
-import rain_main from "../audio/rain/EiT Rain - Main Track 00.wav";
-import rain_wind2 from "../audio/rain/EiT Rain - Wind level 2 00.wav";
-import rain_wind3 from "../audio/rain/EiT Rain - Wind level 2 00.wav";
-import rain_windChimes1 from "../audio/rain/EiT Rain - Windchimes level 1 00.wav";
-import rain_windChimes2 from "../audio/rain/EiT Rain - Windchimes level 2 00.wav";
-import rain_windChimes3 from "../audio/rain/EiT Rain - Windchimes level 3 00.wav";
-import rain_rain1 from "../audio/rain/EiT Rain - Windchimes level 1 00.wav";
-import rain_rain2 from "../audio/rain/EiT Rain - Windchimes level 2 00.wav";
-import rain_rain3 from "../audio/rain/EiT Rain - Windchimes level 3 00.wav";
-
-// 10 sec fadeout
-const audio = {
-    "sunny": { main: sun_main, wind: [sun_wind2, sun_wind3], chimes: [sun_windChimes1, sun_windChimes2, sun_windChimes3] },
-    "rain": { rain_main, rain_wind2, rain_wind3, rain_windChimes1, rain_windChimes2, rain_windChimes3, rain_rain1, rain_rain2, rain_rain3 }
-}
 
 // Navbar component
 export const NavBar = ({
@@ -36,9 +15,6 @@ export const NavBar = ({
 }) => {
 
     const weatherInfo = useWeather(data)
-    console.log(audio[weatherInfo.weatherClass].main)
-    console.log(audio[weatherInfo.weatherClass].wind[weatherInfo.windLevel])
-    console.log(audio[weatherInfo.weatherClass].chimes[weatherInfo.windLevel])
     return (
         <Navbar bg="dark" variant="dark">
             <Container>
@@ -75,12 +51,7 @@ export const NavBar = ({
                 </ul>
             </Container>
             <li className="px-5 my-auto">
-                <AudioPlayer
-                    url={
-                        audio[weatherInfo.weatherClass]
-                    }
-                    loop={true}
-                />
+                <AudioPlayer loop={true} weatherClass={weatherInfo.weatherClass} windLevel={weatherInfo.windLevel} rainLevel={weatherInfo.rainLevel}/>
             </li>
         </Navbar>
     );
