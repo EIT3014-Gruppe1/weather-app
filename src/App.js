@@ -4,6 +4,7 @@ import { InfoDisplay } from "./components/InfoDisplay";
 import { cities } from "./utils/constants";
 import { useWeather } from "./utils/useWeather";
 import { themes } from "./utils/constants";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./app.css";
 
 export const ThemeContext = createContext(themes["sunny"]);
