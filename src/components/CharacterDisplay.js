@@ -1,5 +1,3 @@
-import "../styles/character.css";
-
 // Component for displaying character with clothes
 export const CharacterDisplay = ({
   clothingLayer,

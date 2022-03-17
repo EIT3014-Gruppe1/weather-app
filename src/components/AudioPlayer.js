@@ -130,9 +130,12 @@ const AudioPlayer = ({ weatherClass, windLevel, rainLevel, loop }) => {
   const [playing, toggle] = useAudio(audioTracks, loop);
 
   return (
-    <div>
-      <button onClick={toggle}>{playing ? "X" : "♫"}</button>
-    </div>
+    <img
+      className={`navbar-image ${playing ? "" : "contrast-filter"}`}
+      src={"/assets/sound.png"}
+      onClick={toggle}
+      alt="sound-button"
+    />
   );
 };
 

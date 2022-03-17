@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { getUserLocation } from "../api/API";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 // Returns user location
 const useUserLocation = () => {

@@ -1,38 +1,25 @@
-import { NavDropdown } from "react-bootstrap";
 import { cities } from "../utils/constants";
 import useUserLocation from "../utils/useUserLocation";
+import CustomDropdown from "./CustomDropdown";
 
 // A dropdown menu for choosing location
 export const CityDropdown = ({ setChoosenCity, choosenCity }) => {
   const [userLocation] = useUserLocation();
+  let locations = [
+    {
+      name: "My location",
+      latitude: userLocation.latitude,
+      longitude: userLocation.longitude,
+    },
+    ...cities,
+  ];
+
   return (
-    <NavDropdown
-      id="dropdown-basic-button"
+    <CustomDropdown
       title={choosenCity.name}
-      menuVariant="dark"
-    >
-      <NavDropdown.Item
-        onClick={() =>
-          setChoosenCity({
-            name: "My location",
-            latitude: userLocation.latitude,
-            longitude: userLocation.longitude,
-          })
-        }
-      >
-        My location
-      </NavDropdown.Item>
-      {cities.map((city) => {
-        return (
-          <NavDropdown.Item
-            onClick={() => setChoosenCity(city)}
-            key={city.name}
-          >
-            {city.name}
-          </NavDropdown.Item>
-        );
-      })}
-    </NavDropdown>
+      locations={locations}
+      selectItem={setChoosenCity}
+    />
   );
 };
 
