@@ -213,7 +213,11 @@ export const clothing = {
 };
 
 export const weatherEtymology = {
-  clearsky_day: { name: "Clear sky day", etymology: "hjfadkjfh" },
+  clearsky_day: {
+    name: "Clear sky day",
+    etymology:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+  },
 };
 
 export const getMappedWeatherEtymology = (yrWeatherClass) => {
@@ -221,4 +225,22 @@ export const getMappedWeatherEtymology = (yrWeatherClass) => {
 
   let mapping = "clearsky_day";
   return weatherEtymology[mapping];
+};
+
+export const themes = {
+  rain: {
+    primary: "#a7c9d3",
+    secondary: "#8ba7b2",
+    tertiary: "#e0fffc",
+  },
+  sunny: {
+    primary: "#F0FFEF",
+    secondary: "#9EDB99",
+    tertiary: "#FFD88C",
+  },
+  snow: {
+    primary: "#DEFFFF",
+    secondary: "#A7C8D5",
+    tertiary: "#4B7E9E",
+  },
 };

@@ -3,6 +3,7 @@ import { CharacterDisplay } from "./CharacterDisplay";
 import { WeatherEtymologyDisplay } from "./WeatherEtymologyDisplay";
 import { ClothingEtymologyDisplay } from "./ClothingEtymologyDisplay";
 import { clothing } from "../utils/constants";
+import ToggleSwitch from "./ToggleSwitch";
 
 // Component displaying etymology info and clothing info/image
 export const InfoDisplay = ({ weatherInfo }) => {
@@ -37,7 +38,17 @@ export const InfoDisplay = ({ weatherInfo }) => {
 
   return (
     <div className="main-container">
-      <div className="etymology-container" onClick={toggleView}>
+      <div className="character-container">
+        <CharacterDisplay
+          incrementClothingLayerIndex={incrementClothingLayerIndex}
+          clothingLayer={clothingInfo[clothingLayerIndex]}
+        />
+      </div>
+      <div className="text-container">
+        <img
+          src={`assets/weather_icons/${weatherInfo.yrWeatherClass}.png`}
+          alt={weatherInfo.yrWeatherClass}
+        />
         {viewClothingEtymology ? (
           <ClothingEtymologyDisplay
             clothingLayer={clothingInfo[clothingLayerIndex].clothing}
@@ -45,11 +56,10 @@ export const InfoDisplay = ({ weatherInfo }) => {
         ) : (
           <WeatherEtymologyDisplay weatherInfo={weatherInfo} />
         )}
-      </div>
-      <div className="character-container">
-        <CharacterDisplay
-          incrementClothingLayerIndex={incrementClothingLayerIndex}
-          clothingLayer={clothingInfo[clothingLayerIndex]}
+        <ToggleSwitch
+          toggle={toggleView}
+          options={["weather", "clothes"]}
+          state={viewClothingEtymology}
         />
       </div>
     </div>
