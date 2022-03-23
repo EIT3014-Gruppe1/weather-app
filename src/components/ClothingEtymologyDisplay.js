@@ -6,14 +6,14 @@ export const ClothingEtymologyDisplay = ({ clothingLayer }) => {
     <ThemeContext.Consumer>
       {(theme) =>
         clothingLayer.map((clothing, index) => (
-          <>
-            <h1 className="title" style={{ color: theme.tertiary }}>
+          <div className="text-area">
+            <h1 className="small-title" style={{ color: theme.tertiary }}>
               {clothing.title}
             </h1>
-            <div className="textbox" key={index}>
-              <p className="text">{clothing.etymology}</p>
+            <div className="text-box" key={index}>
+              <p className="small-text">{clothing.etymology}</p>
             </div>
-          </>
+          </div>
         ))
       }
     </ThemeContext.Consumer>

@@ -9,6 +9,8 @@ body {
   height: 100%;
   width: 100%;
   min-height: 100vh;
+  max-width: 100vw;
+  overflow: hidden;
 }
 
 .main-container {
@@ -24,23 +26,25 @@ body {
 .info-container {
   width: 50%;
   max-width: 500px;
-  min-height: 50%;
-  max-height: 300px;
-  align-self: center;
-  padding: 50px 0px 0px 00px;
-  align-items: left;
-  justify-content: space-between;
+  height: 600px;
   display: flex;
+  min-width: 0;
+  align-self: center;
   flex-direction: column;
   z-index: 1;
+  justify-content: flex-end;
   position: relative;
+}
+
+.info-text-box {
+  overflow-y: auto;
 }
 
 .weather-icon {
   position: absolute;
   width: 300px;
-  right: -150px;
-  top: -150px;
+  right: -100px;
+  top: 100px;
   z-index: -1;
 }
 
@@ -57,12 +61,21 @@ body {
   line-height: 100px;
 }
 
-.text {
+.small-title {
+  font-size: 25px;
+  line-height: 25px;
+}
+
+.text-area {
   font-size: 20px;
 }
 
-.textbox {
-  overflow-y: hidden; 
+.small-text {
+  font-size: 20px;
+}
+
+.text-box {
+  overflow-y: auto; 
 }
 
 .character > img {
@@ -74,6 +87,8 @@ body {
 .character {
   min-width: 600px;
   max-width: 600px;
+  height: 600px;
+  align-self: center;
   padding: 0;
   margin: 0;
   display: flex;
@@ -112,7 +127,6 @@ body {
   position: relative;
   align-items: center;
   text-align: center;
-  bottom: -50px;
   gap: 5px;
 }
 .toggle-switch > .toggle {

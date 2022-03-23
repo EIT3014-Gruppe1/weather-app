@@ -48,13 +48,15 @@ export const InfoDisplay = ({ weatherInfo }) => {
       <div className="info-container">
         {/* src={`assets/weather_icons/${weatherInfo.yrWeatherClass}.png`} */}
         <WeatherIcon />
-        {viewClothingEtymology ? (
-          <ClothingEtymologyDisplay
-            clothingLayer={clothingInfo[clothingLayerIndex].clothing}
-          />
-        ) : (
-          <WeatherEtymologyDisplay weatherInfo={weatherInfo} />
-        )}
+        <div className="info-text-box">
+          {viewClothingEtymology ? (
+            <ClothingEtymologyDisplay
+              clothingLayer={clothingInfo[clothingLayerIndex].clothing}
+            />
+          ) : (
+            <WeatherEtymologyDisplay weatherInfo={weatherInfo} />
+          )}
+        </div>
         <ToggleSwitch
           toggle={toggleView}
           options={["weather", "clothes"]}

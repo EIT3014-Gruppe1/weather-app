@@ -76,7 +76,7 @@ const useAudio = (url, loop) => {
       audios[i].setAttribute("src", url[i]);
       loopAudios[i].setAttribute("src", url[i]);
     }
-    playAudio()
+    playing && playAudio()
   }, [url[0], url[1]]);
 
   // Plays or pauses the audio clip based on button state
