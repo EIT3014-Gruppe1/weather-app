@@ -45,7 +45,7 @@ export const InfoDisplay = ({ weatherInfo }) => {
           clothingLayer={clothingInfo[clothingLayerIndex]}
         />
       </div>
-      <div className="text-container">
+      <div className="info-container">
         {/* src={`assets/weather_icons/${weatherInfo.yrWeatherClass}.png`} */}
         <WeatherIcon />
         {viewClothingEtymology ? (

@@ -21,10 +21,11 @@ body {
   width: 100%;
 }
 
-.text-container {
+.info-container {
   width: 50%;
   max-width: 500px;
   min-height: 50%;
+  max-height: 300px;
   align-self: center;
   padding: 50px 0px 0px 00px;
   align-items: left;
@@ -58,6 +59,10 @@ body {
 
 .text {
   font-size: 20px;
+}
+
+.textbox {
+  overflow-y: hidden; 
 }
 
 .character > img {
@@ -104,8 +109,10 @@ body {
 
 .toggle-switch {
   display: flex;
+  position: relative;
   align-items: center;
   text-align: center;
+  bottom: -50px;
   gap: 5px;
 }
 .toggle-switch > .toggle {

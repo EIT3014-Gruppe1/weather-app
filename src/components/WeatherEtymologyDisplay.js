@@ -8,17 +8,14 @@ export const WeatherEtymologyDisplay = ({ weatherInfo }) => {
   return (
     <ThemeContext.Consumer>
       {(theme) => (
-        <div className="textbox">
-          <h1
-            className="title"
-            style={{ color: theme.tertiary}}
-          >
+        <>
+          <h1 className="title" style={{ color: theme.tertiary }}>
             {weatherEtymology.name}
           </h1>
-          <p className="text">
-            {weatherEtymology.etymology}
-          </p>
-        </div>
+          <div className="textbox">
+            <p className="text">{weatherEtymology.etymology}</p>
+          </div>
+        </>
       )}
     </ThemeContext.Consumer>
   );
