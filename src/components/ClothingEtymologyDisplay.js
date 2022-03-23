@@ -11,7 +11,7 @@ export const ClothingEtymologyDisplay = ({ clothingLayer }) => {
               className="title"
               style={{ color: theme.tertiary}}
             >
-              {clothing.name}
+              {clothing.title}
             </h1>
             <p className="text">
               {clothing.etymology}

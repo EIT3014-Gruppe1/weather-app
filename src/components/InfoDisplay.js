@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { CharacterDisplay } from "./CharacterDisplay";
 import { WeatherEtymologyDisplay } from "./WeatherEtymologyDisplay";
 import { ClothingEtymologyDisplay } from "./ClothingEtymologyDisplay";
-import { clothing } from "../utils/constants";
+import { clothingForWeather } from "../utils/constants";
 import ToggleSwitch from "./ToggleSwitch";
 import WeatherIcon from "./WeatherIcon";
 
@@ -12,7 +12,7 @@ export const InfoDisplay = ({ weatherInfo }) => {
   const [viewClothingEtymology, setViewClothingEtymology] = useState(false);
 
   const [clothingInfo, setClothingInfo] = useState(
-    clothing["sunny"]["20"].clothingLayers
+    clothingForWeather["sunny"]["20"].clothingLayers
   );
   const [clothingLayerIndex, setClothingLayerIndex] = useState(0);
 
@@ -31,7 +31,7 @@ export const InfoDisplay = ({ weatherInfo }) => {
   // Set clothing info according to weather
   useEffect(() => {
     setClothingInfo(
-      clothing[weatherInfo.weatherClass][weatherInfo.temperatureClass]
+      clothingForWeather[weatherInfo.weatherClass][weatherInfo.temperatureClass]
         .clothingLayers
     );
     setClothingLayerIndex(0);
