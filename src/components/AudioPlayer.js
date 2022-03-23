@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import sun_main from "../audio/sun/EiT Sun - Main Track 00.wav";
 import sun_wind2 from "../audio/sun/EiT Sun - Wind level 2 00.wav";
-import sun_wind3 from "../audio/sun/EiT Sun - Wind level 2 00.wav";
+import sun_wind3 from "../audio/sun/EiT Sun - Wind level 3 00.wav";
 import sun_windChimes1 from "../audio/sun/EiT Sun - Windchimes level 1 00.wav";
 import sun_windChimes2 from "../audio/sun/EiT Sun - Windchimes level 2 00.wav";
 import sun_windChimes3 from "../audio/sun/EiT Sun - Windchimes level 3 00.wav";
 import rain_main from "../audio/rain/EiT Rain - Main Track 00.wav";
 import rain_wind2 from "../audio/rain/EiT Rain - Wind level 2 00.wav";
-import rain_wind3 from "../audio/rain/EiT Rain - Wind level 2 00.wav";
+import rain_wind3 from "../audio/rain/EiT Rain - Wind level 3 00.wav";
 import rain_windChimes1 from "../audio/rain/EiT Rain - Windchimes level 1 00.wav";
 import rain_windChimes2 from "../audio/rain/EiT Rain - Windchimes level 2 00.wav";
 import rain_windChimes3 from "../audio/rain/EiT Rain - Windchimes level 3 00.wav";
@@ -15,59 +15,74 @@ import rain_rain1 from "../audio/rain/EiT Rain - Rain level 1 00.wav";
 import rain_rain2 from "../audio/rain/EiT Rain - Rain level 2 00.wav";
 import rain_rain3 from "../audio/rain/EiT Rain - Rain level 3 00.wav";
 
+const maxNumberAudios = 4;
+// Create as many audio elements as specified in maxNumberAudios
+const createMaxNumberAudios = () => {
+  let audioArray = [];
+  for (let i = 0; i < maxNumberAudios; i++) {
+    audioArray.push(new Audio());
+  }
+  return audioArray;
+};
+
 // When to start the loop track
 const loopCrossFade = 10;
-
 // Plays and pauses the audio given by the url
 const useAudio = (url, loop) => {
-  const [audio, setAudio] = useState([]);
-  const [loopAudio, setLoopAudio] = useState([]); // Need duplicated audio to start loop before audio ends
+  const [audios] = useState(createMaxNumberAudios);
+  const [loopAudios] = useState(createMaxNumberAudios); // Need duplicated audio to start loop before audio ends
 
   const [playing, setPlaying] = useState(false);
 
   // Toggle the audio state
   const toggle = () => setPlaying(!playing);
-
   // Plays audio, if we start loop, play loopAudio
   const playAudio = (useLoopAudio = false) => {
     if (!useLoopAudio) {
-      for (let i = 0; i < audio.length; i++) {
-        audio[i].play();
+      for (const audioElement of audios) {
+        audioElement.play();
       }
     } else {
-      for (let i = 0; i < loopAudio.length; i++) {
-        loopAudio[i].play();
+      for (const audioElement of loopAudios) {
+        audioElement.play();
       }
     }
   };
 
   // Pauses all audio
   const pauseAudio = () => {
-    for (let i = 0; i < audio.length; i++) {
-      audio[i].pause();
+    for (const audioElement of audios) {
+      audioElement.pause();
     }
-    for (let i = 0; i < loopAudio.length; i++) {
-      loopAudio[i].pause();
+    for (const audioElement of loopAudios) {
+      audioElement.pause();
     }
   };
 
+  const resetAudio = () => {
+    for (const audioElement of audios) {
+      audioElement.setAttribute("src", undefined);
+    }
+    for (const audioElement of loopAudios) {
+      audioElement.setAttribute("src", undefined);
+    }
+  }
+
   // Initialize the audio clips
   useEffect(() => {
-    const audios = [];
-    const loopAudios = [];
+    resetAudio()
+    // Change the source of the audioElements to the given urls
     for (var i = 0; i < url.length; i++) {
-      audios.push(new Audio(url[i]));
-      loopAudios.push(new Audio(url[i]));
+      audios[i].setAttribute("src", url[i]);
+      loopAudios[i].setAttribute("src", url[i]);
     }
-    pauseAudio();
-    setAudio(audios);
-    setLoopAudio(loopAudios);
+    playAudio()
   }, [url[0], url[1]]);
 
   // Plays or pauses the audio clip based on button state
   useEffect(() => {
     playing ? playAudio() : pauseAudio();
-  }, [playing, audio]);
+  }, [playing, audios]);
 
   // Updates the button state once the audio clip has ended
   // if looping the auido clip will restart and button will not be updated
@@ -78,8 +93,8 @@ const useAudio = (url, loop) => {
     // Check timeleft of track every second
     const interval = setInterval(() => {
       if (useLoopAudio)
-        timeLeft = loopAudio[0].duration - loopAudio[0].currentTime;
-      else timeLeft = audio[0].duration - audio[0].currentTime;
+        timeLeft = loopAudios[0].duration - loopAudios[0].currentTime;
+      else timeLeft = audios[0].duration - audios[0].currentTime;
 
       if (loop) {
         if (timeLeft < loopCrossFade) {
@@ -93,7 +108,7 @@ const useAudio = (url, loop) => {
 
     !playing && clearInterval(interval);
     return () => clearInterval(interval);
-  }, [playing, audio]);
+  }, [playing, audios]);
 
   // Return the current audio state and the toggle function
   return [playing, toggle];
