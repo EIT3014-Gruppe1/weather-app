@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { NavBar } from "./components/NavBar";
 import { InfoDisplay } from "./components/InfoDisplay";
 import { cities } from "./utils/constants";
@@ -13,7 +13,7 @@ const App = () => {
   const [choosenCity, setChoosenCity] = useState(cities[0]);
   const weatherInfo = useWeather(choosenCity);
   let theme = themes[weatherInfo.weatherClass];
-
+  
   return (
     <ThemeContext.Provider value={theme}>
       <div style={{ backgroundColor: theme.primary }} className="main">

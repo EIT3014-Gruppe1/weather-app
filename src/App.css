@@ -1,4 +1,16 @@
 /*TODO: maybe create seperate css files*/
+::-webkit-scrollbar {
+  width: 20px;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 2555, 0.3);
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
 
 body {
   font-family: "Playfair Display" !important;
@@ -30,21 +42,23 @@ body {
   display: flex;
   min-width: 0;
   align-self: center;
+  justify-self: center;
   flex-direction: column;
   z-index: 1;
-  justify-content: flex-end;
+  justify-content: flex-start;
   position: relative;
 }
 
 .info-text-box {
   overflow-y: auto;
+  margin-top: auto;
 }
 
 .weather-icon {
   position: absolute;
   width: 300px;
   right: -100px;
-  top: 100px;
+  top: 0px;
   z-index: -1;
 }
 
@@ -52,6 +66,7 @@ body {
   width: 50%;
   display: flex;
   justify-content: center;
+  position: relative;
   align-items: center;
   z-index: 1;
 }
@@ -87,7 +102,7 @@ body {
 .character {
   min-width: 600px;
   max-width: 600px;
-  height: 600px;
+  height: 700px;
   align-self: center;
   padding: 0;
   margin: 0;
@@ -117,6 +132,20 @@ body {
   z-index: 999;
 }
 
+.navbar-left {
+  display: flex;
+  gap: 15px;
+  text-align:center
+}
+
+.navbar-left > .temp {
+  font-size: 30px;
+  margin: 0;
+  font-weight: 700;
+  align-self: center;
+  text-align: center;
+}
+
 .navbar-right {
   display: flex;
   gap: 15px;
@@ -127,6 +156,8 @@ body {
   position: relative;
   align-items: center;
   text-align: center;
+  flex: 0 1 auto;
+  margin-top: auto;
   gap: 5px;
 }
 .toggle-switch > .toggle {
@@ -190,4 +221,20 @@ body {
   display: block;
   width: calc(100% + 1.3px);
   height: 350px;
+}
+
+.notification {
+  position: absolute; 
+  background-color: rgba(255, 255, 2555, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+
+  z-index: 9999;
+}
+
+.notification > p {
+  margin: 0;
 }
