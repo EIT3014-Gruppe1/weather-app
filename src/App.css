@@ -35,11 +35,11 @@ body {
   position: relative;
 }
 
-.text-container > img {
+.weather-icon {
   position: absolute;
-  width: 400px;
-  right: -200px;
-  top: -200px;
+  width: 300px;
+  right: -150px;
+  top: -150px;
   z-index: -1;
 }
 

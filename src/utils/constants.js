@@ -232,15 +232,18 @@ export const themes = {
     primary: "#a7c9d3",
     secondary: "#8ba7b2",
     tertiary: "#e0fffc",
+    img: "rain.png"
   },
   sunny: {
     primary: "#F0FFEF",
     secondary: "#9EDB99",
     tertiary: "#FFD88C",
+    img: "sunny.png"
   },
   snow: {
     primary: "#DEFFFF",
     secondary: "#A7C8D5",
     tertiary: "#4B7E9E",
+    img: "snow.png"
   },
 };

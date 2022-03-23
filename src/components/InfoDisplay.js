@@ -4,6 +4,7 @@ import { WeatherEtymologyDisplay } from "./WeatherEtymologyDisplay";
 import { ClothingEtymologyDisplay } from "./ClothingEtymologyDisplay";
 import { clothing } from "../utils/constants";
 import ToggleSwitch from "./ToggleSwitch";
+import WeatherIcon from "./WeatherIcon";
 
 // Component displaying etymology info and clothing info/image
 export const InfoDisplay = ({ weatherInfo }) => {
@@ -45,10 +46,8 @@ export const InfoDisplay = ({ weatherInfo }) => {
         />
       </div>
       <div className="text-container">
-        <img
-          src={`assets/weather_icons/${weatherInfo.yrWeatherClass}.png`}
-          alt={weatherInfo.yrWeatherClass}
-        />
+        {/* src={`assets/weather_icons/${weatherInfo.yrWeatherClass}.png`} */}
+        <WeatherIcon />
         {viewClothingEtymology ? (
           <ClothingEtymologyDisplay
             clothingLayer={clothingInfo[clothingLayerIndex].clothing}
